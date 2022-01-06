@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>returnbook</class>
+ <widget class="QWidget" name="returnbook">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>442</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>100</y>
+     <width>256</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView {
+	font: 25 9pt &quot;Microsoft YaHei&quot;;
+	border: 15px solid #e2e1e4; /* 设置边框的大小，样式，颜色 */
+	border-radius: 10px;
+    background-color: #e2e1e4
+}
+QListView::item:hover {
+	background-color: transparent;
+	padding: 10px;
+	border-left: 3px solid rgb(130, 130, 130);
+}
+QListView::item:selected {
+	background-color: transparent;
+	color: black;
+	padding: 10px;
+	border-left: 3px solid black;
+}
+QListView::item {
+    height: 60px;
+    background-color: #e2e1e4
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>60</y>
+     <width>251</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>黑体</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>XX</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

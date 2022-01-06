@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>manageUserInformation</class>
+ <widget class="QWidget" name="manageUserInformation">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>596</width>
+    <height>490</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Bahnschrift SemiCondensed</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QLabel" name="label_usernamelab">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>UserName:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_userName">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>30</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_sexlab">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Sex:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_agelab">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>110</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Age</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_statuslab">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>150</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Status:</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>150</y>
+     <width>256</width>
+     <height>221</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView {
+	font: 25 9pt &quot;Microsoft YaHei&quot;;
+	border: 15px solid #e2e1e4; /* 设置边框的大小，样式，颜色 */
+	border-radius: 10px;
+    background-color: #e2e1e4
+}
+QListView::item:hover {
+	background-color: transparent;
+	padding: 10px;
+	border-left: 3px solid rgb(130, 130, 130);
+}
+QListView::item:selected {
+	background-color: transparent;
+	color: black;
+	padding: 10px;
+	border-left: 3px solid black;
+}
+QListView::item {
+    height: 60px;
+    background-color: #e2e1e4
+}</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_listlab">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>110</y>
+     <width>221</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Books borrowed by users:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>390</y>
+     <width>112</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {  
+    /* 前景色 */  
+    color:#d0dfe6;  
+
+    /* 背景色 */  
+    background-color:#393733;  
+
+    /* 边框风格 */  
+    border-style:outset;  
+
+    /* 边框宽度 */  
+    border-width:2px;  
+
+    /* 边框颜色 */  
+    border-color:rgb(10,45,110);  
+
+    /* 边框倒角 */  
+    border-radius:10px;  
+
+    /* 字体 */  
+    font:bold 14px;  
+
+    /* 控件最小宽度 */  
+    min-width:100px;  
+
+    /* 控件最小高度 */  
+    min-height:20px;  
+
+    /* 内边距 */  
+    padding:4px;  
+}  
+
+/* 鼠标按下时的效果 */  
+QPushButton#pushButton:pressed {  
+
+    color:#4a4035;
+    /* 改变背景色 */  
+    background-color:#e4dfd7;  
+
+    /* 改变边框风格 */  
+    border-style:inset;  
+
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+
+/* 按钮样式 */  
+QPushButton:flat {  
+    border:2px solid red;  
+}  
+
+/* 当按钮打开菜单时:ui-&gt;pushButton-&gt;setMenu(btnMenu) */  
+QPushButton:open{  
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #dadbde, stop: 1 #f6f7fa);  
+}  
+
+/* 子选择器:菜单 */  
+QPushButton::menu-indicator {  
+    image:url(:/images/close.png);  
+
+    /* 去掉小三角号   
+    image:none;*/  
+
+    /* 绘制subcontrol 的参考矩形的位置 */  
+    subcontrol-origin:padding;  
+
+    /* 小三角的位置 */  
+    subcontrol-position:bottom right;  
+}  
+
+QPushButton::menu-indicator:pressed,QPushButton::menu-indicator:open {  
+    position:relative;  
+    top:4px;  
+    left:4px;  
+} 
+
+</string>
+   </property>
+   <property name="text">
+    <string>confirm</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>430</y>
+     <width>112</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {  
+    /* 前景色 */  
+    color:#d0dfe6;  
+
+    /* 背景色 */  
+    background-color:#393733;  
+
+    /* 边框风格 */  
+    border-style:outset;  
+
+    /* 边框宽度 */  
+    border-width:2px;  
+
+    /* 边框颜色 */  
+    border-color:rgb(10,45,110);  
+
+    /* 边框倒角 */  
+    border-radius:10px;  
+
+    /* 字体 */  
+    font:bold 14px;  
+
+    /* 控件最小宽度 */  
+    min-width:100px;  
+
+    /* 控件最小高度 */  
+    min-height:20px;  
+
+    /* 内边距 */  
+    padding:4px;  
+}  
+
+/* 鼠标按下时的效果 */  
+QPushButton#pushButton:pressed {  
+
+    color:#4a4035;
+    /* 改变背景色 */  
+    background-color:#e4dfd7;  
+
+    /* 改变边框风格 */  
+    border-style:inset;  
+
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+
+/* 按钮样式 */  
+QPushButton:flat {  
+    border:2px solid red;  
+}  
+
+/* 当按钮打开菜单时:ui-&gt;pushButton-&gt;setMenu(btnMenu) */  
+QPushButton:open{  
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #dadbde, stop: 1 #f6f7fa);  
+}  
+
+/* 子选择器:菜单 */  
+QPushButton::menu-indicator {  
+    image:url(:/images/close.png);  
+
+    /* 去掉小三角号   
+    image:none;*/  
+
+    /* 绘制subcontrol 的参考矩形的位置 */  
+    subcontrol-origin:padding;  
+
+    /* 小三角的位置 */  
+    subcontrol-position:bottom right;  
+}  
+
+QPushButton::menu-indicator:pressed,QPushButton::menu-indicator:open {  
+    position:relative;  
+    top:4px;  
+    left:4px;  
+} 
+
+</string>
+   </property>
+   <property name="text">
+    <string>cancel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>390</y>
+     <width>112</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {  
+    /* 前景色 */  
+    color:#847c74;  
+
+    /* 背景色 */  
+    background-color:#fbecde;  
+
+    /* 边框风格 */  
+    border-style:outset;  
+
+    /* 边框宽度 */  
+    border-width:2px;  
+
+    /* 边框颜色 */  
+    border-color:rgb(10,45,110);  
+
+    /* 边框倒角 */  
+    border-radius:10px;  
+
+    /* 字体 */  
+    font:bold 14px;  
+
+    /* 控件最小宽度 */  
+    min-width:100px;  
+
+    /* 控件最小高度 */  
+    min-height:20px;  
+
+    /* 内边距 */  
+    padding:4px;  
+}  
+
+/* 鼠标按下时的效果 */  
+QPushButton#pushButton:pressed {  
+
+    color:#4a4035;
+    /* 改变背景色 */  
+    background-color:#e4dfd7;  
+
+    /* 改变边框风格 */  
+    border-style:inset;  
+
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+
+/* 按钮样式 */  
+QPushButton:flat {  
+    border:2px solid red;  
+}  
+
+/* 当按钮打开菜单时:ui-&gt;pushButton-&gt;setMenu(btnMenu) */  
+QPushButton:open{  
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #dadbde, stop: 1 #f6f7fa);  
+}  
+
+/* 子选择器:菜单 */  
+QPushButton::menu-indicator {  
+    image:url(:/images/close.png);  
+
+    /* 去掉小三角号   
+    image:none;*/  
+
+    /* 绘制subcontrol 的参考矩形的位置 */  
+    subcontrol-origin:padding;  
+
+    /* 小三角的位置 */  
+    subcontrol-position:bottom right;  
+}  
+
+QPushButton::menu-indicator:pressed,QPushButton::menu-indicator:open {  
+    position:relative;  
+    top:4px;  
+    left:4px;  
+} 
+
+</string>
+   </property>
+   <property name="text">
+    <string>apply</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Sex">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>70</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Age">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>110</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_Status">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>150</y>
+     <width>141</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_head">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>30</y>
+     <width>70</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:32px;padding:2px 4px;border-style: outset;}
+                                           QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                           QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_modfiyUserName">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>30</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:10px;padding:2px 4px;border-style: outset;}
+                                           QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                           QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_modfiySex">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>70</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:10px;padding:2px 4px;border-style: outset;}
+                                           QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                           QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_modfiyAge">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>110</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:10px;padding:2px 4px;border-style: outset;}
+                                           QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                           QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_modfiyStatus">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>150</y>
+     <width>21</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{background-color: rgb(225, 225, 225);border:2px groove gray;border-radius:10px;padding:2px 4px;border-style: outset;}
+                                           QPushButton:hover{background-color:rgb(229, 241, 251); color: black;}
+                                           QPushButton:pressed{background-color:rgb(204, 228, 247);border-style: inset;}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_userName">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>30</y>
+     <width>91</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_Man">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>70</y>
+     <width>117</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Man</string>
+   </property>
+  </widget>
+  <widget class="QRadioButton" name="radioButton_Woman">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>70</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Woman</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="spinBox">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>110</y>
+     <width>91</width>
+     <height>24</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>150</y>
+     <width>89</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_returnbook">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>410</y>
+     <width>112</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {  
+    /* 前景色 */  
+    color:#847c74;  
+
+    /* 背景色 */  
+    background-color:#fbecde;  
+
+    /* 边框风格 */  
+    border-style:outset;  
+
+    /* 边框宽度 */  
+    border-width:2px;  
+
+    /* 边框颜色 */  
+    border-color:rgb(10,45,110);  
+
+    /* 边框倒角 */  
+    border-radius:10px;  
+
+    /* 字体 */  
+    font:bold 14px;  
+
+    /* 控件最小宽度 */  
+    min-width:100px;  
+
+    /* 控件最小高度 */  
+    min-height:20px;  
+
+    /* 内边距 */  
+    padding:4px;  
+}  
+
+/* 鼠标按下时的效果 */  
+QPushButton#pushButton:pressed {  
+
+    color:#4a4035;
+    /* 改变背景色 */  
+    background-color:#e4dfd7;  
+
+    /* 改变边框风格 */  
+    border-style:inset;  
+
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+
+/* 按钮样式 */  
+QPushButton:flat {  
+    border:2px solid red;  
+}  
+
+/* 当按钮打开菜单时:ui-&gt;pushButton-&gt;setMenu(btnMenu) */  
+QPushButton:open{  
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #dadbde, stop: 1 #f6f7fa);  
+}  
+
+/* 子选择器:菜单 */  
+QPushButton::menu-indicator {  
+    image:url(:/images/close.png);  
+
+    /* 去掉小三角号   
+    image:none;*/  
+
+    /* 绘制subcontrol 的参考矩形的位置 */  
+    subcontrol-origin:padding;  
+
+    /* 小三角的位置 */  
+    subcontrol-position:bottom right;  
+}  
+
+QPushButton::menu-indicator:pressed,QPushButton::menu-indicator:open {  
+    position:relative;  
+    top:4px;  
+    left:4px;  
+} 
+
+</string>
+   </property>
+   <property name="text">
+    <string>return book</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_borrowbook">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>410</y>
+     <width>112</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {  
+    /* 前景色 */  
+    color:#847c74;  
+
+    /* 背景色 */  
+    background-color:#fbecde;  
+
+    /* 边框风格 */  
+    border-style:outset;  
+
+    /* 边框宽度 */  
+    border-width:2px;  
+
+    /* 边框颜色 */  
+    border-color:rgb(10,45,110);  
+
+    /* 边框倒角 */  
+    border-radius:10px;  
+
+    /* 字体 */  
+    font:bold 14px;  
+
+    /* 控件最小宽度 */  
+    min-width:100px;  
+
+    /* 控件最小高度 */  
+    min-height:20px;  
+
+    /* 内边距 */  
+    padding:4px;  
+}  
+
+/* 鼠标按下时的效果 */  
+QPushButton#pushButton:pressed {  
+
+    color:#4a4035;
+    /* 改变背景色 */  
+    background-color:#e4dfd7;  
+
+    /* 改变边框风格 */  
+    border-style:inset;  
+
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+
+/* 按钮样式 */  
+QPushButton:flat {  
+    border:2px solid red;  
+}  
+
+/* 当按钮打开菜单时:ui-&gt;pushButton-&gt;setMenu(btnMenu) */  
+QPushButton:open{  
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #dadbde, stop: 1 #f6f7fa);  
+}  
+
+/* 子选择器:菜单 */  
+QPushButton::menu-indicator {  
+    image:url(:/images/close.png);  
+
+    /* 去掉小三角号   
+    image:none;*/  
+
+    /* 绘制subcontrol 的参考矩形的位置 */  
+    subcontrol-origin:padding;  
+
+    /* 小三角的位置 */  
+    subcontrol-position:bottom right;  
+}  
+
+QPushButton::menu-indicator:pressed,QPushButton::menu-indicator:open {  
+    position:relative;  
+    top:4px;  
+    left:4px;  
+} 
+
+</string>
+   </property>
+   <property name="text">
+    <string>borrow book</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

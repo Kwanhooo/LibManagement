@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/">
+        <file>666.jpg</file>
+        <file>book.png</file>
+        <file>booklogo.png</file>
+        <file>userlogo.png</file>
+        <file>cancellation.png</file>
+        <file>exit.png</file>
+        <file>search.png</file>
+        <file>add.png</file>
+        <file>help.png</file>
+        <file>libraryManagementSystem.png</file>
+        <file>manager.png</file>
+        <file>man.png</file>
+        <file>woman.png</file>
+        <file>messagebox.png</file>
+        <file>modify.png</file>
+        <file>confirm.png</file>
+        <file>libmanageLogo.png</file>
+    </qresource>
+</RCC>
